@@ -5,3 +5,5 @@
 #172.31.17.235 ansible_ssh_user='ec2-user'
 #172.31.19.162 ansible_ssh_user='ec2-user'
 
+[nginx]
+172.31.32.84 ansible_ssh_user='ec2-user'
