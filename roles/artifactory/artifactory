@@ -1,0 +1,14 @@
+[Unit]
+Description=Systemd JFrog Artifactory Container
+After=network.target
+
+[Service]
+Restart=always
+ExecStartPre=-/usr/bin/podman kill artifactory
+ExecStartPre=-/usr/bin/podman rm artifactory
+ExecStart=/usr/bin/podman run --name artifactory -p 8081:8081 -p 8082:8082   -v /jfrog/artifactory:/var/opt/jfrog/artifactory   docker.bintray.io/jfrog/artifactory-oss:latest
+ExecStop=-/usr/bin/podman kill artifactory
+ExecStop=-/usr/bin/podman rm artifactory
+
+[Install]
+WantedBy=multi-user.target

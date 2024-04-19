@@ -16,6 +16,10 @@
 # - name: Webserver assignment
 #  import_playbook: ../static-assignments/webservers.yml
 
-- hosts: nginx
-- name: nginx assignment
+# - hosts: nginx
+# - name: nginx assignment
+#  ansible.biltin.import_playbook: ../static-assignments/uat-webservers.yml
+
+- hosts: artifactory
+- name: artifactory assignment
   ansible.biltin.import_playbook: ../static-assignments/uat-webservers.yml

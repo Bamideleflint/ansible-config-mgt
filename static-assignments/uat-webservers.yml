@@ -3,6 +3,10 @@
 #  roles:
 #     - webserver
 
-- hosts: nginx
+# - hosts: nginx
+#  roles:
+#     - nginx
+
+- hosts: artifactory
   roles:
-     - nginx
+     - artifactory
